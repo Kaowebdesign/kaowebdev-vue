@@ -31,6 +31,9 @@
     width: 110px;
     height: 100vh;
     z-index: 120;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover .mainNav__back {
         transform: rotateX(0deg);
     }
@@ -155,6 +158,7 @@
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
+        text-decoration: none;
     }
     &__text {
         font-weight: 300;
