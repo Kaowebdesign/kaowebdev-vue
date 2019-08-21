@@ -1,25 +1,42 @@
 <template>
-    <div class="mainNav d-flex align-items-center justify-content-center">
-        <a href="#" class="logo_absolute logo_pos_top">
-            <div class="logo ">
-                <div class="logo__item logo__item_one"></div>
-                <div class="logo__item logo__item_two"></div>
-                <div class="logo__item logo__item_three"></div>
+    <div>
+        <div class="mainNav d-flex align-items-center justify-content-center">
+            <router-link to="/">
+                <a href="#" class="logo_absolute logo_pos_top">
+                    <div class="logo ">
+                        <div class="logo__item logo__item_one"></div>
+                        <div class="logo__item logo__item_two"></div>
+                        <div class="logo__item logo__item_three"></div>
+                    </div>
+                    <p class="logo__text pl-1 m-0">KAO</p>
+                </a>
+            </router-link>
+            <a href="#" class="mainNav__wrap">
+                <div class="burgerMenu" id="burgerMenu">
+                    <i class="burgerMenu__item burgerMenu__item_one"></i>
+                    <i class="burgerMenu__item burgerMenu__item_two"></i>
+                    <i class="burgerMenu__item burgerMenu__item_three"></i>
+                    <i class="burgerMenu__item burgerMenu__item_for"></i>
+                </div>
+                <p class="mainNav__text mainNav__menuText text-center mt-3">m<br>e<br>n<br>u</p>
+                <p class="mainNav__text mainNav__openText text-center mt-3">o<br>p<br>e<br>n</p>
+                <p class="mainNav__text mainNav__closeText text-center mt-3">c<br>l<br>o<br>s<br>e</p>
+            </a>
+            <div class="mainNav__back"></div>
+        </div>
+        <div class="menu" id="menu">
+            <div class="menu__wrap d-flex align-items-center">
+                <ul class="menu__list d-flex flex-wrap align-items-around fullHeight m-0">
+                    <li class="menu__item text-center py-5 d-flex justify-content-center align-items-center">
+                        <a class="menu__link menu_hoverLink" href="#"></a>
+                    </li>
+                </ul>
+                <ul class="menu__back m-0">
+                    <li class="menu__back_line"></li>
+                    <li class="menu__back_line"></li>
+                </ul>
             </div>
-            <p class="logo__text pl-1 m-0">KAO</p>
-        </a>
-        <a href="#" class="mainNav__wrap">
-            <div class="burgerMenu" id="burgerMenu">
-                <i class="burgerMenu__item burgerMenu__item_one"></i>
-                <i class="burgerMenu__item burgerMenu__item_two"></i>
-                <i class="burgerMenu__item burgerMenu__item_three"></i>
-                <i class="burgerMenu__item burgerMenu__item_for"></i>
-            </div>
-            <p class="mainNav__text mainNav__menuText text-center mt-3">m<br>e<br>n<br>u</p>
-            <p class="mainNav__text mainNav__openText text-center mt-3">o<br>p<br>e<br>n</p>
-            <p class="mainNav__text mainNav__closeText text-center mt-3">c<br>l<br>o<br>s<br>e</p>
-        </a>
-        <div class="mainNav__back"></div>
+        </div>
     </div>
 </template>
 
