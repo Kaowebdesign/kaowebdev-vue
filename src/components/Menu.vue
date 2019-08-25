@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="mainNav d-flex align-items-center justify-content-center">
+        <div class="mainNav d-flex align-items-center justify-content-center"  v-bind:class="{mainNav_active:isMenuActive}">
             <router-link to="/">
                 <a href="#" class="logo_absolute logo_pos_top">
                     <div class="logo ">
@@ -12,7 +12,7 @@
                 </a>
             </router-link>
             <a href="#" class="mainNav__wrap">
-                <div class="burgerMenu" id="burgerMenu">
+                <div class="burgerMenu" id="burgerMenu"  v-bind:class="{burgerMenu_active:isMenuActive}" @click="showMenu">
                     <i class="burgerMenu__item burgerMenu__item_one"></i>
                     <i class="burgerMenu__item burgerMenu__item_two"></i>
                     <i class="burgerMenu__item burgerMenu__item_three"></i>
@@ -24,11 +24,11 @@
             </a>
             <div class="mainNav__back"></div>
         </div>
-        <div class="menu" id="menu">
-            <div class="menu__wrap d-flex align-items-center">
+        <div class="menu" id="menu" v-bind:class="{menu_active:isMenuActive}">
+            <div class="menu__wrap d-flex align-items-center"  v-bind:class="{menu__wrap_active:isMenuActive}">
                 <ul class="menu__list d-flex flex-wrap align-items-around fullHeight m-0">
-                    <li class="menu__item text-center py-5 d-flex justify-content-center align-items-center">
-                        <a class="menu__link menu_hoverLink" href="#"></a>
+                    <li class="menu__item text-center py-5 d-flex justify-content-center align-items-center" v-for="(item, i) in menuItems" :key="`menuItems${i}`">
+                        <router-link class="menu__link menu_hoverLink" :to="item.route"><span @click="showMenu">{{item.title}}</span></router-link>
                     </li>
                 </ul>
                 <ul class="menu__back m-0">
@@ -39,6 +39,43 @@
         </div>
     </div>
 </template>
+
+<script>
+
+export default {
+    data(){
+        return {
+            isMenuActive:false
+        }
+    },
+    methods: {
+        showMenu:function(){
+            this.isMenuActive = !this.isMenuActive
+        }
+    },
+    computed:{
+        menuItems(){
+            return [{
+                title:'Home',
+                route:'/'
+            },
+            {
+                title:'About',
+                route:'/about'
+            },
+            {
+                title:'Profile',
+                route:'/profile'
+            },
+            {
+                title:'Contact',
+                route:'/contact'
+            }]
+        }
+    }
+}
+
+</script>
 
 <style scoped lang="scss">
 .mainNav {
@@ -324,6 +361,18 @@
                 right: 33.33%
             }
         }
+    }
+}
+.fullHeight {
+    width: 100%;
+    height: 100%;
+}
+@keyframes showElement {
+    0% {
+        transform: translateX(calc(-100% - 110px));
+    }
+    100% {
+        transform: translateX(0px);
     }
 }
 </style>
