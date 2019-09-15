@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <transition name="fade">
+    <transition name="fade" mode="out-in">
       <router-view/>
     </transition>
     <Menu />
@@ -12,7 +12,7 @@
 import Menu from '@/components/Menu.vue'
 
 export default {
-   name: 'home',
+  name: 'home',
   components: {
     Menu
   }

@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <div class="main__wrap d-flex align-items-center" v-scroll="handleScroll">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 d-flex flex-column justify-content-center">
+        <b-container>
+            <b-row>
+                <b-col cols="4" class="d-flex flex-column justify-content-center">
                     <div class="caption">
                         <h1 class="caption__text caption__text_size_lg caption__text_style_lite caption__text_uppercase text-left">Kaowebdev</h1>
                         <p class="caption__back caption__text_style_big caption__text_size_bg caption__text_color_grey">kao</p>
@@ -14,13 +14,13 @@
                                 illo error nam soluta maiores consectetur esse aliquam eum delectus suscipit dolore necessitatibus cum. Iste corporis rem qui hic, architecto quaerat!</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-8">
+                </b-col>
+                <b-col cols=8>
                     <div class="main__img-wrap">
                     </div>
-                </div>
-            </div>
-        </div>
+                </b-col>
+            </b-row>
+        </b-container>
         <div class="callMe d-flex flex-column align-items-center p-4">
             <a href="#" class="callMe__phone"><i class="fa fa-phone"></i></a>
             <a href="#" class="main__text main__text_style_small main__text_color_grey mt-4">Interested?</a>
